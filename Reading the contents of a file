@@ -1,0 +1,31 @@
+Reading the contents of a file
+Write code to read contents of a file and print it to the console. You can use the fs library to as a black box, the goal is to understand async tasks. 
+Try to do an expensive operation below the file read and see how it affects the output. Make the expensive operation more and more expensive and see how it affects the output.
+
+const fs = require('fs');
+
+// Function to read the contents of a file
+function readFileAndPrint(filename) {
+  // Read the contents of the file asynchronously
+  fs.readFile(filename, 'utf8', (err, data) => {
+    if (err) {
+      console.error('Error reading file:', err);
+      return;
+    }
+    
+    // Print the contents of the file to the console
+    console.log('File contents:');
+    console.log(data);
+
+    // Perform an expensive operation (e.g., a loop)
+    for (let i = 0; i < 100000000; i++) {
+      // Do something expensive
+    }
+
+    // Print a message indicating the expensive operation is done
+    console.log('Expensive operation completed.');
+  });
+}
+
+// Call the function to read and print the contents of the file
+readFileAndPrint('example.txt');
