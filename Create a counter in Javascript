@@ -1,0 +1,17 @@
+We have already covered this in the second lesson, but as an easy recap try to code a counter in Javascript It should go up as time goes by in intervals of 1 second.
+
+//Iniialize a counter variable
+let counter = 0;
+
+//Function to Update and display the counter
+function updateCounter() {
+
+//increment the counter by 1
+counter++;
+
+// Display the updated counter value
+  console.log("Counter:", counter);
+}
+
+// Set an interval to call the updateCounter function every second
+setInterval(updateCounter, 1000);
